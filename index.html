@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Cell Shader</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "canvas-confetti": "https://cdn.skypack.dev/canvas-confetti"
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Image Cell Shader</h1>
+        <p>Upload an image of a realistic human. AI will describe it, generate a new image based on the description, and then apply a cell shader effect.</p>
+
+        <div class="upload-section">
+            <label for="imageUpload">Upload Image:</label>
+            <input type="file" id="imageUpload" accept="image/*">
+        </div>
+
+        <div class="processing-flow">
+            <div class="image-display-area">
+                <h2>Original Uploaded Image</h2>
+                <img id="uploadedImage" src="#" alt="Uploaded Image" style="display:none;">
+                <p id="uploadPrompt" class="status-message">Please upload an image.</p>
+            </div>
+
+            <div class="controls">
+                <button id="generateButton" disabled>Analyze & Generate</button>
+                <p id="statusMessage" class="status-message"></p>
+            </div>
+            
+            <div class="description-area">
+                <h2>AI Generated Description</h2>
+                <textarea id="aiDescription" rows="5" readonly placeholder="AI description will appear here..."></textarea>
+            </div>
+
+            <div class="image-display-area">
+                <h2>AI Generated Image</h2>
+                <img id="generatedImage" src="#" alt="AI Generated Image" style="display:none;">
+                 <p id="generatePrompt" class="status-message">AI-generated image will appear here.</p>
+            </div>
+
+            <div class="image-display-area">
+                <h2>Cell Shaded Image</h2>
+                <canvas id="cellShadedCanvas"></canvas>
+                <p id="cellShaderPrompt" class="status-message">Cell-shaded image will appear here.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+
